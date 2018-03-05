@@ -1,5 +1,5 @@
-class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :update, :destroy]
+class BooksController < OpenReadController
+  before_action :set_book, only: %i[show update destroy]
 
   # GET /books
   def index
@@ -39,14 +39,17 @@ class BooksController < ApplicationController
     @book.destroy
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find(params[:id])
-    end
+  # private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book
+    # @book = Book.find(params[:id])
+    @book = current_user.books.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def book_params
-      params.require(:book).permit(:title, :author, :user_id)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def book_params
+    params.require(:book).permit(:title, :author)
+  end
+
+  private :set_book, :book_params
 end
