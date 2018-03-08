@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/comments" \
+curl "http://localhost:4741/comments/" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
@@ -8,7 +8,7 @@ curl "http://localhost:4741/comments" \
   --data '{
     "comment": {
       "comment": "'"${COMM}"'",
-      "book_id": "'"${BOOKID}"'"
+      "book_id": "'"${ID}"'"
     }
   }'
 
