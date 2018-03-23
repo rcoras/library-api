@@ -6,18 +6,18 @@ I planned my project by creating user stories and an ERD. The ERD can be found h
 https://imgur.com/ADwxGFk
 
 The API was built using Ruby on Rails. And allows the following routes
-post '/sign-up'
-post '/sign-in'
-delete '/sign-out'
-patch '/change-password'
-post '/books'
-patch '/books'
-get '/books'
-delete '/books'
-post '/comments'
-patch '/comments'
-get '/comments'
-delete '/comments'
+* post '/sign-up'
+* post '/sign-in'
+* delete '/sign-out'
+* patch '/change-password'
+* post '/books'
+* patch '/books'
+* get '/books'
+* delete '/books'
+* post '/comments'
+* patch '/comments'
+* get '/comments'
+* delete '/comments'
 
 Future iterations of this project would be to make updates so a user could see other users books.
 
